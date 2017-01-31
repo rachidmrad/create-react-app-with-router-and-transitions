@@ -13,22 +13,16 @@ class Works extends Component {
   render() {
     const { className, ...props } = this.props;
     return (
-      <div className={classnames('Works', className)} {...props}>
+      <div className={classnames('Works', 'text-color-light', className)} {...props}>
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>HELLO</h2>
-          <p>Cras facilisis urna ornare ex volutpat, et
-          convallis erat elementum. Ut aliquam, ipsum vitae
-          gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-          metus nec massa. Maecenas hendrerit laoreet augue
-          nec molestie. Cum sociis natoque penatibus et magnis
-          dis parturient montes, nascetur ridiculus mus.</p>
-
-          <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+          <ul>
+            <li>The Perfect Cup</li>
+            <li>Energy Tomorrow</li>
+            <li>American Petroleum Institute</li>
+            <li>Pack Art &amp; Tupography</li>
+            <li>Energy Together</li>
+          </ul>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
