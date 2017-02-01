@@ -22,6 +22,7 @@ function debounce(func, wait, immediate) {
 };
 
 let ts;
+var error = 5; //touch sensitivity, I found between 4 and 7 to be good values.
 
 class Work extends Component {
   // static propTypes = {}
@@ -45,19 +46,24 @@ class Work extends Component {
   handleTouchEnd(e) {
     let te = e.changedTouches[0].clientY;
     let currentIndex = this.state.activeIndex;
-    if (ts < te) {
-      if (currentIndex === 0) {
-        this.setState({ activeIndex : 4} );
+
+    if (Math.abs(te - ts) > error) {
+
+      if (ts < te) {
+        if (currentIndex === 0) {
+          this.setState({ activeIndex : 4} );
+        } else {
+          this.setState({ activeIndex : currentIndex-1} );
+        }
       } else {
-        this.setState({ activeIndex : currentIndex-1} );
-      }
-    } else {
-      if (currentIndex === 4) {
-        this.setState({ activeIndex : 0} );
-      } else {
-        this.setState({ activeIndex : currentIndex+1} );
+        if (currentIndex === 4) {
+          this.setState({ activeIndex : 0} );
+        } else {
+          this.setState({ activeIndex : currentIndex+1} );
+        }
       }
     }
+
   }
 
   handleScroll(e) {
