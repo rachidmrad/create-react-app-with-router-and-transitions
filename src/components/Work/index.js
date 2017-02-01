@@ -35,14 +35,14 @@ class Work extends Component {
     };
     this.handleScroll = debounce(this.handleScroll.bind(this),50);
     this.handleTouchStart = this.handleTouchStart.bind(this);
-    this.handleTouchMove = this.handleTouchMove.bind(this);
+    this.handleTouchEnd = this.handleTouchEnd.bind(this);
   }
 
   handleTouchStart(e) {
      ts = e.touches[0].clientY;
   }
 
-  handleTouchMove(e) {
+  handleTouchEnd(e) {
     let te = e.changedTouches[0].clientY;
     let currentIndex = this.state.activeIndex;
     if (ts < te) {
@@ -101,14 +101,14 @@ class Work extends Component {
     const holder = ReactDOM.findDOMNode(this.refs.holder);
     holder.addEventListener('mousewheel', this.handleScroll);
     holder.addEventListener('touchstart', this.handleTouchStart);
-    holder.addEventListener('touchend', this.handleTouchMove);
+    holder.addEventListener('touchend', this.handleTouchEnd);
   }
 
   componentWillUnmount() {
     const holder = ReactDOM.findDOMNode(this.refs.holder);
     holder.removeEventListener('mousewheel', this.handleScroll);
     holder.removeEventListener('touchstart', this.handleTouchStart);
-    holder.removeEventListener('touchend', this.handleTouchMove);
+    holder.removeEventListener('touchend', this.handleTouchEnd);
   }
 
 
@@ -119,11 +119,12 @@ class Work extends Component {
         <div className="App-header App-works" ref="holder">
           <div className="App-content">
             <ul>
-              <li className={this.isActive(0)}>The Perfect Cup</li>
-              <li className={this.isActive(1)}>Energy Tomorrow</li>
-              <li className={this.isActive(2)}>American Petroleum Institute</li>
-              <li className={this.isActive(3)}>Pack Art &amp; Typography</li>
-              <li className={this.isActive(4)}>Energy Together</li>
+              <div className="touch-screen"></div>
+              <li className={this.isActive(0)}><a href="http://www.rachidmrad.com">The Perfect Cup</a></li>
+              <li className={this.isActive(1)}><a href="http://www.energytomorrow.org">Energy Tomorrow</a></li>
+              <li className={this.isActive(2)}><a href="http://www.api.org">American Petroleum Institute</a></li>
+              <li className={this.isActive(3)}><a href="http://www.rachidmrad.com">Pack Art &amp; Typography</a></li>
+              <li className={this.isActive(4)}><a href="http://www.energytogether.org">Energy Together</a></li>
             </ul>
           </div>
         </div>
