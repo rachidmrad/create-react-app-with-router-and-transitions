@@ -45,7 +45,7 @@ class Work extends Component {
   handleTouchMove(e) {
     let te = e.changedTouches[0].clientY;
     let currentIndex = this.state.activeIndex;
-    if (ts > te) {
+    if (ts < te) {
       if (currentIndex === 0) {
         this.setState({ activeIndex : 4} );
       } else {
