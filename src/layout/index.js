@@ -1,5 +1,5 @@
 // src/components/About/index.js
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classnames from 'classnames';
 import { Link, IndexLink } from 'react-router';

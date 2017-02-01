@@ -1,9 +1,11 @@
-.App-works {
+.Work .App-header{
   overflow: hidden;
-  width: 50%;
+  width: 90%;
   height: 100%;
   margin: auto;
   left: 0; right: 0;
+}
+.Work {
   font-size: 1em;
   line-height:1.2;
   transition: all .3s;
@@ -14,35 +16,35 @@
   background: transparent;
   z-index: 2;
 }
-.App-works li {
+.Work li {
   position: relative;
   z-index: 1;
 }
-.App-works .active {
+.Work .active {
   z-index: 3;
 }
-.App-works li a {
+.Work li a {
   color: #3B4451;
   transition: all .3s;
 }
-.App-works .active a {
+.Work .active a {
   font-size: 1.4em;
   color: #FFFFFF;
 }
-.App-works .prev a, .App-works .next a {
+.Work .prev a, .Work .next a {
   font-size: 1.2em;
   color: #6E7C8E;
 }
 
 @media screen and (min-width: 480px) {
-  .App-works {
+  .Work {
     font-size: 1.5em;
     line-height:1.3;
   }
 }
 
 @media screen and (min-width: 980px) {
-  .App-works {
+  .Work {
     font-size: 2.5em;
     line-height:1.4;
   }

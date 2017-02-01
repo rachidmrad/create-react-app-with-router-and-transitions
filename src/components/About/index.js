@@ -1,5 +1,5 @@
 // src/components/About/index.js
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import './style.css';
@@ -22,7 +22,7 @@ export default class About extends Component {
   render() {
     const { className, ...props } = this.props;
     return (
-      <div className={classnames('About', 'text-color-light', className)} {...props}>
+      <div className={classnames('About', className)} {...props}>
         <div className="App-header">
           <div className="App-content">
             <p>
@@ -45,8 +45,8 @@ export default class About extends Component {
               <li><a href="">bitbucket <img src={bitbucket} alt="bitbucket" /></a></li>
               <li><a href="">github <img src={github} alt="github" /></a></li>
             </ul>
-            <p>
-              <a className="text-color-medium" href="mailto:rachid.mrad@gmail.com">rachid.mrad@gmail.com</a>
+            <p className="small">
+              <a href="mailto:rachid.mrad@gmail.com">rachid.mrad@gmail.com</a>
             </p>
           </div>
         </div>

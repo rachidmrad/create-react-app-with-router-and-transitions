@@ -1,8 +1,8 @@
 // src/components/App/index.js
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import $ from 'jquery';
+import { Link } from 'react-router';
 
 import './style.css';
 
@@ -121,12 +121,12 @@ class Work extends Component {
   render() {
     const { className, ...props } = this.props;
     return (
-      <div className={classnames('Work', 'text-color-light', className)} {...props}>
-        <div className="App-header App-works" ref="holder">
+      <div className={classnames('Work', className)} {...props}>
+        <div className="App-header" ref="holder">
           <div className="App-content">
             <ul>
               <div className="touch-screen"></div>
-              <li className={this.isActive(0)}><a href="http://www.rachidmrad.com">The Perfect Cup</a></li>
+              <li className={this.isActive(0)}><Link to="/cup">The Perfect Cup</Link></li>
               <li className={this.isActive(1)}><a href="http://www.energytomorrow.org">Energy Tomorrow</a></li>
               <li className={this.isActive(2)}><a href="http://www.api.org">American Petroleum Institute</a></li>
               <li className={this.isActive(3)}><a href="http://www.rachidmrad.com">Pack Art &amp; Typography</a></li>
