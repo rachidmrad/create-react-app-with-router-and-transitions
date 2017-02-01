@@ -62,12 +62,12 @@ class Work extends Component {
 
   componentDidMount() {
     const holder = ReactDOM.findDOMNode(this.refs.holder);
-    holder.addEventListener('mousewheel', this.handleScroll);
+    holder.addEventListener('touchmove', this.handleScroll);
   }
 
   componentWillUnmount() {
     const holder = ReactDOM.findDOMNode(this.refs.holder);
-    holder.removeEventListener('mousewheel', this.handleScroll);
+    holder.removeEventListener('touchmove', this.handleScroll);
   }
 
 
