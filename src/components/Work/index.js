@@ -21,35 +21,60 @@ function debounce(func, wait, immediate) {
 	};
 };
 
+let ts;
+
 class Work extends Component {
   // static propTypes = {}
   // static defaultProps = {}
   // state = {}
+
   constructor(props) {
     super(props);
     this.state = {
       activeIndex: 2
     };
     this.handleScroll = debounce(this.handleScroll.bind(this),50);
+    this.handleTouchStart = this.handleTouchStart.bind(this);
+    this.handleTouchMove = this.handleTouchMove.bind(this);
+  }
+
+  handleTouchStart(e) {
+     ts = e.touches[0].clientY;
+  }
+
+  handleTouchMove(e) {
+    let te = e.changedTouches[0].clientY;
+    let currentIndex = this.state.activeIndex;
+    if (ts > te) {
+      if (currentIndex === 0) {
+        this.setState({ activeIndex : 4} );
+      } else {
+        this.setState({ activeIndex : currentIndex-1} );
+      }
+    } else {
+      if (currentIndex === 4) {
+        this.setState({ activeIndex : 0} );
+      } else {
+        this.setState({ activeIndex : currentIndex+1} );
+      }
+    }
   }
 
   handleScroll(e) {
-    //debounce(function(e) {
-      let currentIndex = this.state.activeIndex;
-      if(e.wheelDelta > 0) {
-        if (currentIndex === 0) {
-          this.setState({ activeIndex : 4} );
-        } else {
-          this.setState({ activeIndex : currentIndex-1} );
-        }
+    let currentIndex = this.state.activeIndex;
+    if(e.wheelDelta > 0) {
+      if (currentIndex === 0) {
+        this.setState({ activeIndex : 4} );
       } else {
-        if (currentIndex === 4) {
-          this.setState({ activeIndex : 0} );
-        } else {
-          this.setState({ activeIndex : currentIndex+1} );
-        }
+        this.setState({ activeIndex : currentIndex-1} );
       }
-    // }, 150);
+    } else {
+      if (currentIndex === 4) {
+        this.setState({ activeIndex : 0} );
+      } else {
+        this.setState({ activeIndex : currentIndex+1} );
+      }
+    }
   }
 
   isActive(value){
@@ -75,13 +100,15 @@ class Work extends Component {
   componentDidMount() {
     const holder = ReactDOM.findDOMNode(this.refs.holder);
     holder.addEventListener('mousewheel', this.handleScroll);
-    holder.addEventListener('touchmove', this.handleScroll);
+    holder.addEventListener('touchstart', this.handleTouchStart);
+    holder.addEventListener('touchmove', this.handleTouchMove);
   }
 
   componentWillUnmount() {
     const holder = ReactDOM.findDOMNode(this.refs.holder);
     holder.removeEventListener('mousewheel', this.handleScroll);
-    holder.removeEventListener('touchmove', this.handleScroll);
+    holder.removeEventListener('touchstart', this.handleTouchStart);
+    holder.removeEventListener('touchmove', this.handleTouchMove);
   }
 
 
