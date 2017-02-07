@@ -15,13 +15,15 @@ export default class Layout extends Component {
     const { children, location, className, ...props } = this.props;
     return (
       <div className={classnames('Layout', className)} {...props}>
-        <ul className="header">
+        <ul className="navigation">
           <li><Link to="/Work" activeClassName="active">work</Link></li>
           <li><IndexLink to="/" activeClassName="active">about</IndexLink></li>
         </ul>
         <ReactCSSTransitionGroup
           component="div"
           transitionName="example"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}
         >

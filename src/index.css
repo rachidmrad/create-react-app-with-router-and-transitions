@@ -1,3 +1,5 @@
+/*Reset*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,7 +18,6 @@ time, mark, audio, video {
   border: 0;
   vertical-align: baseline;
 }
-
 ol, ul {
   list-style: none;
 }
@@ -25,6 +26,7 @@ table {
   border-spacing: 0;
 }
 
+/*General Typography and Layout*/
 html, body {
   position: relative;
   width: 100%;
@@ -36,35 +38,42 @@ body {
   text-align: center;
   background-color: #000000;
 }
+img {
+  max-width:100%;
+  height: auto;
+}
+a:link, a:visited {
+  text-decoration: none;
+}
+a:active, a:hover {
+  text-decoration: underline;
+}
 .App-header {
   position: relative;
   background-color: #000000;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+}
+.App-header.vertical-center {
   display:table;
 }
 .App-footer {
   position: relative;
   width: 100%;;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #1C1F24;
+}
+.App-footer.vertical-center {
   display:table;
 }
-.App-content {
+.App-content.vertical-center {
   display: table-cell;
   vertical-align: middle;
 }
-.text-color-light {
-  color:#FFFFFF;
-}
-.text-color-medium {
-  color:#6e7c8e;
-}
-.text-color-dark {
-  color:#3b4451;
-}
 
-.header {
+
+/*Navigation*/
+.navigation {
   position: fixed;
   display: block;
   z-index: 5;
@@ -73,22 +82,157 @@ body {
   right:0;
   font-family: 'Cabin', sans-serif;
 }
-.header li {
+.navigation li {
   display: inline-block;
 }
-.header li:first-child {
+.navigation li:first-child {
   margin-right: 30px;
 }
-a:link, a:visited {
-  text-decoration: none;
+.navigation a:link, .navigation a:visited {
   color: #FFFFFF;
 }
-a:active, .header .active {
+.navigation .active {
   text-decoration: underline;
 }
 @media screen and (min-width: 780px) {
-  .header {
+  .navigation {
     left: 30px;
     right:auto;
   }
+}
+
+/*Default template*/
+.App-default {
+  color: #FFFFFF;
+  font-size: 1em;
+  line-height:1;
+}
+.App-default p {
+  font-size:1.4em;
+  margin: auto;
+  left: 0; right: 0;
+}
+.App-default .App-header p {
+  margin:30px auto;
+}
+.App-default .App-header img {
+  margin:30px 0;
+}
+.App-default p, img {
+  width: 80%;
+}
+.App-default .App-content a:link,
+.App-default .App-content a:visited {
+  color: #FFFFFF;
+  text-decoration:underline;
+}
+.App-default .App-content .small a:link,
+.App-default .App-content .small a:visited {
+  color: #6E7C8E;
+  text-decoration:none;
+}
+.App-default ul {
+  position: relative;
+  margin: 20px 0;
+}
+.App-default .social-nav li {
+  position: relative;
+  display:inline-block;
+  margin: 10px;
+}
+.App-default .social-nav a {
+  position: relative;
+  background-color: #3B4451;
+  border-radius: 20px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+}
+.App-default .other-works a:link {
+  text-decoration: none;
+}
+.App-default .social-nav img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+.App-default .App-header .App-content {
+  padding:160px 0 80px;
+}
+
+@media screen and (min-width: 350px) {
+  .App-default {
+    font-size: 1.8em;
+    line-height:1;
+  }
+  .App-default p, img {
+    width: 70%;
+  }
+  .App-default ul {
+    margin: 30px 0;
+  }
+  .App-default .social-nav a {
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .App-default {
+    font-size: 2em;
+    line-height:1.2;
+  }
+  .App-default p {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .App-default {
+    font-size: 2.5em;
+    line-height:1.3;
+  }
+  .App-default p {
+    width: 50%;
+  }
+  .App-default ul {
+    margin: 40px 0;
+  }
+  .App-default .social-nav a {
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+  }
+  .App-default .App-header .App-content {
+    padding:360px 0 180px;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .App-default {
+    font-size: 3em;
+    line-height:1.3;
+  }
+}
+
+.external-link {
+  position: relative;
+  padding-right:1em;
+}
+.external-link img {
+  width:.8em;
+  position:absolute;
+  top:.1em;
+  margin:0;
+  right:0;
+}
+p.small {
+  font-size: 0.8em;
+}
+p.small, p.small a:link {
+  color: #6E7C8E;
 }

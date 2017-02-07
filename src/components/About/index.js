@@ -15,27 +15,39 @@ import github from './github.svg';
 
 
 export default class About extends Component {
-  // static propTypes = {}
-  // static defaultProps = {}
-  // state = {}
+  componentDidMount() {
+    const scrollDuration = 600;
+    const scrollHeight = window.scrollY,
+          scrollStep = Math.PI / ( scrollDuration / 15 ),
+          cosParameter = scrollHeight / 2;
+    let scrollCount = 0,
+        scrollMargin,
+        scrollInterval = setInterval( function() {
+          if ( window.scrollY !== 0 ) {
+            scrollCount = scrollCount + 1;
+            scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
+            window.scrollTo( 0, ( scrollHeight - scrollMargin ) );
+          } else clearInterval(scrollInterval);
+        }, 15 );
+  }
 
   render() {
     const { className, ...props } = this.props;
     return (
-      <div className={classnames('About', className)} {...props}>
-        <div className="App-header">
-          <div className="App-content">
+      <div className={classnames('App-default', className)} {...props}>
+        <div className="App-header vertical-center">
+          <div className="App-content vertical-center">
             <p>
-              My name is Rachid<img src={audiodescription} alt="Audio Description" />. I&rsquo;m a creative developer based in Washington DC. I currently work at <a target="_blank" href="http://www.api.org/">the API</a>.
+              My name is <a href="" className="icon-inline">Rachid<img src={audiodescription} alt="Audio Description" /></a>. I&rsquo;m a creative developer based in Washington DC. I work at <a target="_blank" href="http://www.api.org/">the API</a>.
             </p>
           </div>
         </div>
-        <div className="App-footer">
-          <div className="App-content">
+        <div className="App-footer vertical-center">
+          <div className="App-content vertical-center">
             <p>
               Connection vectors
             </p>
-            <ul>
+            <ul className="social-nav">
               <li><a href="">email <img src={email} alt="email" /></a></li>
               <li><a href="">linkedin <img src={linkedin} alt="linkedin" /></a></li>
               <li><a href="">phone <img src={phone} alt="phone" /></a></li>

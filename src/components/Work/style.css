@@ -1,51 +1,71 @@
-.Work .App-header{
+.App-carousel .App-header{
   overflow: hidden;
   width: 90%;
-  height: 100%;
   margin: auto;
   left: 0; right: 0;
 }
-.Work {
+.App-carousel {
   font-size: 1em;
   line-height:1.2;
   transition: all .3s;
+  position: relative;
 }
-.touch-screen {
+.App-carousel ul {
+  position: relative;
+  z-index: 1;
+}
+.touch-hide-screen {
   position: absolute;
   width:100%; height:100%; top:0; bottom:0; left:0; right:0;
   background: transparent;
   z-index: 2;
 }
-.Work li {
+.App-carousel li {
   position: relative;
   z-index: 1;
 }
-.Work .active {
+.App-carousel li.active {
   z-index: 3;
 }
-.Work li a {
+.App-carousel li a {
   color: #3B4451;
   transition: all .3s;
 }
-.Work .active a {
+.App-carousel .active a {
   font-size: 1.4em;
   color: #FFFFFF;
 }
-.Work .prev a, .Work .next a {
+.App-carousel .prev a, .App-carousel .next a {
   font-size: 1.2em;
   color: #6E7C8E;
 }
 
 @media screen and (min-width: 480px) {
-  .Work {
+  .App-carousel {
     font-size: 1.5em;
     line-height:1.3;
   }
 }
 
 @media screen and (min-width: 980px) {
-  .Work {
+  .App-carousel {
     font-size: 2.5em;
     line-height:1.4;
   }
+}
+
+.App-carousel img {
+  position: absolute;
+  width:90%;
+  z-index:0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in;
+}
+.App-carousel img.active {
+  width:100%;
+  opacity: 1;
 }

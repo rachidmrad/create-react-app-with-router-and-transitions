@@ -108,6 +108,9 @@ class Work extends Component {
     holder.addEventListener('mousewheel', this.handleScroll);
     holder.addEventListener('touchstart', this.handleTouchStart);
     holder.addEventListener('touchend', this.handleTouchEnd);
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+      holder.addEventListener('DOMMouseScroll', this.handleScroll);
+    }
   }
 
   componentWillUnmount() {
@@ -115,23 +118,31 @@ class Work extends Component {
     holder.removeEventListener('mousewheel', this.handleScroll);
     holder.removeEventListener('touchstart', this.handleTouchStart);
     holder.removeEventListener('touchend', this.handleTouchEnd);
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+      holder.removeEventListener('DOMMouseScroll', this.handleScroll);
+    }
   }
 
 
   render() {
     const { className, ...props } = this.props;
     return (
-      <div className={classnames('Work', className)} {...props}>
-        <div className="App-header" ref="holder">
-          <div className="App-content">
+      <div className={classnames('App-carousel', className)} {...props}>
+        <div className="App-header vertical-center" ref="holder">
+          <div className="App-content vertical-center">
             <ul>
-              <div className="touch-screen"></div>
+              <div className="touch-hide-screen"></div>
               <li className={this.isActive(0)}><Link to="/cup">The Perfect Cup</Link></li>
-              <li className={this.isActive(1)}><a href="http://www.energytomorrow.org">Energy Tomorrow</a></li>
-              <li className={this.isActive(2)}><a href="http://www.api.org">American Petroleum Institute</a></li>
-              <li className={this.isActive(3)}><a href="http://www.rachidmrad.com">Pack Art &amp; Typography</a></li>
-              <li className={this.isActive(4)}><a href="http://www.energytogether.org">Energy Together</a></li>
+              <li className={this.isActive(1)}><Link to="/energytomorrow">Energy Tomorrow</Link></li>
+              <li className={this.isActive(2)}><Link to="/api">American Petroleum Institute</Link></li>
+              <li className={this.isActive(3)}><Link to="/packart">Pack Art &amp; Typography</Link></li>
+              <li className={this.isActive(4)}><Link to="/energytogether">Energy Together</Link></li>
             </ul>
+            <img className={this.isActive(0)} src="portfolio-1.jpg" alt="" />
+            <img className={this.isActive(1)} src="portfolio-2.jpg" alt="" />
+            <img className={this.isActive(2)} src="portfolio-3.jpg" alt="" />
+            <img className={this.isActive(3)} src="portfolio-4.jpg" alt="" />
+            <img className={this.isActive(4)} src="portfolio-5.jpg" alt="" />
           </div>
         </div>
       </div>

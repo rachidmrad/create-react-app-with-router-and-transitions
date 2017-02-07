@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import './style.css';
 import extrenalLink from './external-link.svg';
 
-export default class Work1 extends Component {
+export default class Work3 extends Component {
   componentDidMount() {
     const scrollDuration = 600;
     const scrollHeight = window.scrollY,
@@ -30,7 +30,7 @@ export default class Work1 extends Component {
         <div className="App-header vertical-center">
           <div className="App-content vertical-center">
             <p>
-              The Perfect Cup
+              American Petroleum Institute
             </p>
             <img src="img1.jpg" alt="" />
             <img src="img2.jpg" alt="" />
