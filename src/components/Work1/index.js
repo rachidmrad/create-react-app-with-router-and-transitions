@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { Link } from 'react-router';
+import Lazyload from 'react-lazyload';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import './style.css';
 import extrenalLink from './external-link.svg';
@@ -29,18 +31,82 @@ export default class Work1 extends Component {
       <div className={classnames('App-default', className)} {...props}>
         <div className="App-header vertical-center">
           <div className="App-content vertical-center">
-            <p>
-              The Perfect Cup
-            </p>
-            <img src="img1.jpg" alt="" />
-            <img src="img2.jpg" alt="" />
-            <img src="img3.jpg" alt="" />
-            <img src="img4.jpg" alt="" />
-            <img src="img5.jpg" alt="" />
-            <img src="img6.jpg" alt="" />
-            <p>
-              <a href="">Full Book</a>
-            </p>
+            <div className="Sub-fixed-top">
+              <p className="">
+                The Perfect Cup
+              </p>
+              <p className="small text-color-dark">
+                Lettering, painting, craft.
+              </p>
+            </div>
+            <div className="Sub-fixed-bottom">
+              <div className="gradient-screen" />
+              <div className="image-wrapper">
+                <Lazyload throttle={50} height={1100}>
+                  <ReactCSSTransitionGroup key="1"
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={300}
+                    transitionEnter={false}
+                    transitionLeave={false}>
+                      <img src="img1.jpg" alt="" />
+                  </ReactCSSTransitionGroup>
+                </Lazyload>
+                <Lazyload throttle={50} height={1100}>
+                  <ReactCSSTransitionGroup key="1"
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={300}
+                    transitionEnter={false}
+                    transitionLeave={false}>
+                      <img src="img2.jpg" alt="" />
+                  </ReactCSSTransitionGroup>
+                </Lazyload>
+                <Lazyload throttle={50} height={1100}>
+                  <ReactCSSTransitionGroup key="1"
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={300}
+                    transitionEnter={false}
+                    transitionLeave={false}>
+                      <img src="img3.jpg" alt="" />
+                  </ReactCSSTransitionGroup>
+                </Lazyload>
+                <Lazyload throttle={50} height={1100}>
+                  <ReactCSSTransitionGroup key="1"
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={300}
+                    transitionEnter={false}
+                    transitionLeave={false}>
+                      <img src="img4.jpg" alt="" />
+                  </ReactCSSTransitionGroup>
+                </Lazyload>
+                <Lazyload throttle={50} height={1100}>
+                  <ReactCSSTransitionGroup key="1"
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={300}
+                    transitionEnter={false}
+                    transitionLeave={false}>
+                      <img src="img5.jpg" alt="" />
+                  </ReactCSSTransitionGroup>
+                </Lazyload>
+                <Lazyload throttle={50} height={1100}>
+                  <ReactCSSTransitionGroup key="1"
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={300}
+                    transitionEnter={false}
+                    transitionLeave={false}>
+                      <img src="img6.jpg" alt="" />
+                  </ReactCSSTransitionGroup>
+                </Lazyload>
+                <p>
+                  <a href="">Full Book</a>
+                </p>
+              </div>  
+            </div>
           </div>
         </div>
         <div className="App-footer vertical-center">

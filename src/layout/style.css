@@ -17,3 +17,11 @@
 .example-leave.example-leave-active {
   opacity: 0;
 }
+
+.fade-appear {
+    opacity: 0.01;
+    transition: opacity .3s ease-in;
+  }
+.fade-appear.fade-appear-active {
+  opacity: 1;
+}

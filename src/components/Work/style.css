@@ -34,6 +34,7 @@
 .App-carousel .active a {
   font-size: 1.4em;
   color: #FFFFFF;
+  text-decoration: underline;
 }
 .App-carousel .prev a, .App-carousel .next a {
   font-size: 1.2em;

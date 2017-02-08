@@ -37,6 +37,7 @@ class Work extends Component {
     this.handleScroll = debounce(this.handleScroll.bind(this),50);
     this.handleTouchStart = this.handleTouchStart.bind(this);
     this.handleTouchEnd = this.handleTouchEnd.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleTouchStart(e) {
@@ -83,6 +84,27 @@ class Work extends Component {
     }
   }
 
+  handleClick(e) {
+    let currentIndex = this.state.activeIndex;
+    let mousePos = e.clientY;
+    let el = document.querySelector("li.active");
+    let viewportOffset = el.getBoundingClientRect();
+    var top = viewportOffset.top;
+    if(mousePos < top) {
+      if (currentIndex === 0) {
+        this.setState({ activeIndex : 4} );
+      } else {
+        this.setState({ activeIndex : currentIndex-1} );
+      }
+    } else {
+      if (currentIndex === 4) {
+        this.setState({ activeIndex : 0} );
+      } else {
+        this.setState({ activeIndex : currentIndex+1} );
+      }
+    }
+  }
+
   isActive(value){
     let currentClass = '';
     switch(value) {
@@ -111,6 +133,8 @@ class Work extends Component {
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
       holder.addEventListener('DOMMouseScroll', this.handleScroll);
     }
+    const clickHolder = ReactDOM.findDOMNode(this.refs.holder);
+    holder.addEventListener('click', this.handleClick);
   }
 
   componentWillUnmount() {
@@ -121,6 +145,8 @@ class Work extends Component {
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
       holder.removeEventListener('DOMMouseScroll', this.handleScroll);
     }
+    const clickHolder = ReactDOM.findDOMNode(this.refs.holder);
+    clickHolder.removeEventListener('click', this.handleClick);
   }
 
 
@@ -131,7 +157,7 @@ class Work extends Component {
         <div className="App-header vertical-center" ref="holder">
           <div className="App-content vertical-center">
             <ul>
-              <div className="touch-hide-screen"></div>
+              <div className="touch-hide-screen" ref="clickHolder"></div>
               <li className={this.isActive(0)}><Link to="/cup">The Perfect Cup</Link></li>
               <li className={this.isActive(1)}><Link to="/energytomorrow">Energy Tomorrow</Link></li>
               <li className={this.isActive(2)}><Link to="/api">American Petroleum Institute</Link></li>
