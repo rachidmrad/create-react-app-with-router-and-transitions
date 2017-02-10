@@ -126,24 +126,24 @@ class Work extends Component {
   }
 
   componentDidMount() {
-    const holder = ReactDOM.findDOMNode(this.refs.holder);
-    holder.addEventListener('mousewheel', this.handleScroll);
-    holder.addEventListener('touchstart', this.handleTouchStart);
-    holder.addEventListener('touchend', this.handleTouchEnd);
+    const scrollHolder = ReactDOM.findDOMNode(this.refs.holder);
+    scrollHolder.addEventListener('mousewheel', this.handleScroll);
+    scrollHolder.addEventListener('touchstart', this.handleTouchStart);
+    scrollHolder.addEventListener('touchend', this.handleTouchEnd);
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-      holder.addEventListener('DOMMouseScroll', this.handleScroll);
+      scrollHolder.addEventListener('DOMMouseScroll', this.handleScroll);
     }
     const clickHolder = ReactDOM.findDOMNode(this.refs.holder);
-    holder.addEventListener('click', this.handleClick);
+    clickHolder.addEventListener('click', this.handleClick);
   }
 
   componentWillUnmount() {
-    const holder = ReactDOM.findDOMNode(this.refs.holder);
-    holder.removeEventListener('mousewheel', this.handleScroll);
-    holder.removeEventListener('touchstart', this.handleTouchStart);
-    holder.removeEventListener('touchend', this.handleTouchEnd);
+    const scrollHolder = ReactDOM.findDOMNode(this.refs.holder);
+    scrollHolder.removeEventListener('mousewheel', this.handleScroll);
+    scrollHolder.removeEventListener('touchstart', this.handleTouchStart);
+    scrollHolder.removeEventListener('touchend', this.handleTouchEnd);
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-      holder.removeEventListener('DOMMouseScroll', this.handleScroll);
+      scrollHolder.removeEventListener('DOMMouseScroll', this.handleScroll);
     }
     const clickHolder = ReactDOM.findDOMNode(this.refs.holder);
     clickHolder.removeEventListener('click', this.handleClick);
@@ -154,7 +154,7 @@ class Work extends Component {
     const { className, ...props } = this.props;
     return (
       <div className={classnames('App-carousel', className)} {...props}>
-        <div className="App-header vertical-center" ref="holder">
+        <div className="App-header vertical-center" ref="scrollHolder">
           <div className="App-content vertical-center">
             <ul>
               <div className="touch-hide-screen" ref="clickHolder"></div>
