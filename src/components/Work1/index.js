@@ -29,10 +29,10 @@ export default class Work1 extends Component {
     const { className, ...props } = this.props;
     return (
       <div className={classnames('App-default', className)} {...props}>
-        <div className="App-header vertical-center">
-          <div className="App-content vertical-center">
+        <div className="App-header">
+          <div className="App-content">
             <div className="Sub-fixed-top">
-              <p className="">
+              <p>
                 The Perfect Cup
               </p>
               <p className="small text-color-dark">
@@ -46,66 +46,63 @@ export default class Work1 extends Component {
                   <ReactCSSTransitionGroup key="1"
                     transitionName="fade"
                     transitionAppear={true}
-                    transitionAppearTimeout={300}
+                    transitionAppearTimeout={500}
                     transitionEnter={false}
                     transitionLeave={false}>
-                      <img src="img1.jpg" alt="" />
+                      <img src="A_img1.jpg" alt="" />
                   </ReactCSSTransitionGroup>
                 </Lazyload>
                 <Lazyload throttle={50} height={1100}>
                   <ReactCSSTransitionGroup key="1"
                     transitionName="fade"
                     transitionAppear={true}
-                    transitionAppearTimeout={300}
+                    transitionAppearTimeout={500}
                     transitionEnter={false}
                     transitionLeave={false}>
-                      <img src="img2.jpg" alt="" />
+                      <img src="A_img2.jpg" alt="" />
                   </ReactCSSTransitionGroup>
                 </Lazyload>
                 <Lazyload throttle={50} height={1100}>
                   <ReactCSSTransitionGroup key="1"
                     transitionName="fade"
                     transitionAppear={true}
-                    transitionAppearTimeout={300}
+                    transitionAppearTimeout={500}
                     transitionEnter={false}
                     transitionLeave={false}>
-                      <img src="img3.jpg" alt="" />
+                      <img src="A_img3.jpg" alt="" />
                   </ReactCSSTransitionGroup>
                 </Lazyload>
                 <Lazyload throttle={50} height={1100}>
                   <ReactCSSTransitionGroup key="1"
                     transitionName="fade"
                     transitionAppear={true}
-                    transitionAppearTimeout={300}
+                    transitionAppearTimeout={500}
                     transitionEnter={false}
                     transitionLeave={false}>
-                      <img src="img4.jpg" alt="" />
+                      <img src="A_img4.jpg" alt="" />
                   </ReactCSSTransitionGroup>
                 </Lazyload>
                 <Lazyload throttle={50} height={1100}>
                   <ReactCSSTransitionGroup key="1"
                     transitionName="fade"
                     transitionAppear={true}
-                    transitionAppearTimeout={300}
+                    transitionAppearTimeout={500}
                     transitionEnter={false}
                     transitionLeave={false}>
-                      <img src="img5.jpg" alt="" />
+                      <img src="A_img5.jpg" alt="" />
                   </ReactCSSTransitionGroup>
                 </Lazyload>
                 <Lazyload throttle={50} height={1100}>
                   <ReactCSSTransitionGroup key="1"
                     transitionName="fade"
                     transitionAppear={true}
-                    transitionAppearTimeout={300}
+                    transitionAppearTimeout={500}
                     transitionEnter={false}
                     transitionLeave={false}>
-                      <img src="img6.jpg" alt="" />
+                      <img src="A_img6.jpg" alt="" />
                   </ReactCSSTransitionGroup>
                 </Lazyload>
-                <p>
-                  <a href="">Full Book</a>
-                </p>
-              </div>  
+              </div>
             </div>
           </div>
         </div>
@@ -115,7 +112,6 @@ export default class Work1 extends Component {
               Other featured projects
             </p>
             <ul className="other-works">
-              <li><Link to="/cup">The Perfect Cup</Link></li>
               <li><Link to="/energytomorrow">Energy Tomorrow</Link></li>
               <li><Link to="/api">American Petroleum Institute</Link></li>
               <li><Link to="/packart">Pack Art &amp; Typography</Link></li>
