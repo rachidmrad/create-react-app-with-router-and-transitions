@@ -1,13 +1,57 @@
 .icon-inline {
-  padding-right:.5em;
   position:relative;
-  margin-right:-0.4em
 }
 
+.audioDesc {
+  display:inline-block;
+  width: 161px;
+  text-align:left;
+}
 .App-content .icon-inline img {
-  width:.5em;
+  width:22px;
   position: absolute;
   top:0;
-  right:0;
+  max-width: none;
   margin:0;
+}
+
+.audioDesc span {
+  position: relative;
+  display:none;
+}
+.audioDesc span.active {
+  display:inline;
+}
+
+@media screen and (min-width: 350px) {
+  .audioDesc {
+    width: 165px;
+  }
+  .App-content .icon-inline img {
+    width:50px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .audioDesc {
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .audioDesc {
+    width: 225px;
+  }
+  .App-content .icon-inline img {
+    width:70px;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .audioDesc {
+    width: 270px;
+  }
+  .App-content .icon-inline img {
+    width:80px;
+  }
 }

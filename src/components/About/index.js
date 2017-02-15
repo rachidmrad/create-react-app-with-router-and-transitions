@@ -1,6 +1,7 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import $ from 'jquery';
 
 import './style.css';
 import email from './email.svg';
@@ -15,6 +16,13 @@ import github from './github.svg';
 
 
 export default class About extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     const scrollDuration = 600;
     const scrollHeight = window.scrollY,
@@ -31,6 +39,43 @@ export default class About extends Component {
         }, 15 );
   }
 
+  handleClick(event) {
+    event.preventDefault();
+
+    let ActiveObjects = [];
+    let hiddenObjects = [];
+
+    $('.audioDesc span').each(function() {
+      if ($(this).hasClass('active')) {
+        ActiveObjects.push($(this));
+      } else {
+        hiddenObjects.push($(this));
+      }
+    });
+
+    hiddenObjects.reverse();
+
+    hideVisible();
+    setTimeout(showHidden, 600);
+    //__OBJECTS.reverse();
+
+    function hideVisible() {
+      let letter = ActiveObjects.pop();
+      letter.removeClass('active');
+      if (ActiveObjects.length) {
+        setTimeout(hideVisible, 60);
+      }
+    }
+    function showHidden() {
+      let letter = hiddenObjects.pop();
+      letter.addClass('active');
+      if (hiddenObjects.length) {
+        setTimeout(showHidden, 60);
+      }
+    }
+
+  }
+
   render() {
     const { className, ...props } = this.props;
     return (
@@ -38,7 +83,23 @@ export default class About extends Component {
         <div className="App-header vertical-center">
           <div className="App-content vertical-center">
             <p>
-              My name is <a href="" className="icon-inline">Rachid<img src={audiodescription} alt="Audio Description" /></a>. I&rsquo;m a creative developer based in Washington DC. I work at <a target="_blank" href="http://www.api.org/">the API</a>.
+              My name is <a href="javascript(void);" onClick={this.handleClick} className="icon-inline audioDesc">Ra
+
+                  <span className="active">c</span>
+                  <span className="active">h</span>
+                  <span className="active">i</span>
+                  <span className="active">d</span>
+                  <span className="active"><img src={audiodescription} alt="Audio Description" /></span>
+
+                  <span>&#8209;</span>
+                  <span>s</span>
+                  <span>h</span>
+                  <span>e</span>
+                  <span>e</span>
+                  <span>d</span>
+
+
+                </a>. I&rsquo;m a creative developer based in Washington DC. I work at <a target="_blank" href="http://www.api.org/">the API</a>.
             </p>
           </div>
         </div>
