@@ -6,7 +6,7 @@
 }
 .App-carousel {
   font-size: 1.2em;
-  line-height:1.2;
+  line-height: 1.2;
   transition: all .3s;
   position: relative;
 }
@@ -31,13 +31,25 @@
   z-index: 3;
 }
 .App-carousel li a {
+  display: inline-block;
   color: #3B4451;
   transition: all .3s;
+}
+.App-carousel li a:hover {
+  text-decoration:none;
 }
 .App-carousel .active a {
   font-size: 1.4em;
   color: #FFFFFF;
-  text-decoration: underline;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  line-height:0.9;
+  text-shadow:
+    2px 2px #1C1F24,
+    2px -2px #1C1F24,
+    -2px 2px #1C1F24,
+    -2px -2px #1C1F24;
+
 }
 .App-carousel .prev a, .App-carousel .next a {
   font-size: 1.2em;
@@ -61,7 +73,9 @@
 @media screen and (min-width: 480px) {
   .App-carousel {
     font-size: 1.5em;
-    line-height:1.3;
+  }
+  .App-carousel li a {
+    margin: 8px 0;
   }
   .App-carousel ul li {
     margin: 15px 0;
@@ -71,10 +85,15 @@
 @media screen and (min-width: 980px) {
   .App-carousel {
     font-size: 2.5em;
-    line-height:1.4;
   }
   .App-carousel ul li {
     margin: 0 0;
+  }
+  .App-carousel li a {
+    margin: 14px 0;
+  }
+  .App-carousel .active a {
+    border-bottom-width: 4px;
   }
   .App-carousel img {
     width:90%;

@@ -18,7 +18,7 @@ export default class Work1 extends Component {
         scrollMargin,
         scrollInterval = setInterval( function() {
           if ( window.scrollY !== 0 ) {
-            scrollCount = scrollCount + 1;
+            scrollCount += 1;
             scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
             window.scrollTo( 0, ( scrollHeight - scrollMargin ) );
           } else clearInterval(scrollInterval);

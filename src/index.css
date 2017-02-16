@@ -87,9 +87,19 @@ a:active, a:hover {
 }
 .navigation a:link, .navigation a:visited {
   color: #FFFFFF;
+  text-decoration:none;
+  transition: all .2s ease-in;
 }
-.navigation .active {
-  text-decoration: underline;
+.navigation a:hover, .navigation .active {
+  text-decoration:none;
+  border-bottom: 2px solid;
+  display: inline-block;
+  line-height: 0.9;
+  text-shadow:
+    2px 2px #1C1F24,
+    2px -2px #1C1F24,
+    -2px 2px #1C1F24,
+    -2px -2px #1C1F24;
 }
 @media screen and (min-width: 780px) {
   .navigation {
@@ -127,6 +137,11 @@ a:active, a:hover {
 .App-default .App-content .small a:visited {
   color: #6E7C8E;
   text-decoration:none;
+  -webkit-transition: color .2s ease-in;
+  transition: color .2s ease-in;
+}
+.App-default .App-content .small a:hover {
+  color: #8e9fb5;
 }
 .App-default ul {
   position: relative;
@@ -148,12 +163,24 @@ a:active, a:hover {
   width: 40px;
   height: 40px;
   text-indent: -9999px;
+  -webkit-transition: background-color .3s ease-in;
+  transition: background-color .2s ease-in;
+}
+.App-default .social-nav a:hover {
+  background-color: #525d6d;
 }
 .App-default .other-works a:link {
   text-decoration: none;
 }
 .App-default .other-works a:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid;
+  display: inline-block;
+  line-height: 0.85;
+  text-shadow:
+    2px 2px #1C1F24,
+    2px -2px #1C1F24,
+    -2px 2px #1C1F24,
+    -2px -2px #1C1F24;
 }
 .App-default .social-nav img {
   position: absolute;
@@ -247,6 +274,9 @@ p.small {
 }
 p.small, p.small a:link {
   color: #6E7C8E;
+}
+p.small a:hover {
+  color: #525d6d;
 }
 p.fixed {
   position:fixed;

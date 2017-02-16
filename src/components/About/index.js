@@ -11,7 +11,6 @@ import facebook from './facebook.svg';
 import linkedin from './linkedin.svg';
 import phone from './phone.svg';
 import twitter from './twitter.svg';
-import whatsapp from './whatsapp.svg';
 import github from './github.svg';
 
 
@@ -32,7 +31,7 @@ export default class About extends Component {
         scrollMargin,
         scrollInterval = setInterval( function() {
           if ( window.scrollY !== 0 ) {
-            scrollCount = scrollCount + 1;
+            scrollCount += 1;
             scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
             window.scrollTo( 0, ( scrollHeight - scrollMargin ) );
           } else clearInterval(scrollInterval);
@@ -109,14 +108,13 @@ export default class About extends Component {
               Connection vectors
             </p>
             <ul className="social-nav">
-              <li><a href="">email <img src={email} alt="email" /></a></li>
-              <li><a href="">linkedin <img src={linkedin} alt="linkedin" /></a></li>
-              <li><a href="">phone <img src={phone} alt="phone" /></a></li>
-              <li><a href="">whatsapp <img src={whatsapp} alt="whatsapp" /></a></li>
-              <li><a href="">facebook <img src={facebook} alt="facebook" /></a></li>
-              <li><a href="">twitter <img src={twitter} alt="twitter" /></a></li>
-              <li><a href="">bitbucket <img src={bitbucket} alt="bitbucket" /></a></li>
-              <li><a href="">github <img src={github} alt="github" /></a></li>
+              <li><a href="mailto:rachid.mrad@gmail.com">email <img src={email} alt="email" /></a></li>
+              <li><a href="https://www.linkedin.com/in/rachid-mrad-29907a38/">linkedin <img src={linkedin} alt="linkedin" /></a></li>
+              <li><a href="tel:+1-571-213-8505">phone <img src={phone} alt="phone" /></a></li>
+              <li><a href="https://www.facebook.com/rachid.j.mrad">facebook <img src={facebook} alt="facebook" /></a></li>
+              <li><a href="https://twitter.com/rachidmrad">twitter <img src={twitter} alt="twitter" /></a></li>
+              <li><a href="https://bitbucket.org/rachidmrad/">bitbucket <img src={bitbucket} alt="bitbucket" /></a></li>
+              <li><a href="https://github.com/rachidmrad">github <img src={github} alt="github" /></a></li>
             </ul>
             <p className="small">
               <a href="mailto:rachid.mrad@gmail.com">rachid.mrad@gmail.com</a>
