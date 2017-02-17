@@ -16,8 +16,8 @@ export default class Layout extends Component {
     return (
       <div className={classnames('Layout', className)} {...props}>
         <ul className="navigation">
-          <li><Link to="/Work" activeClassName="active">work</Link></li>
           <li><IndexLink to="/" activeClassName="active">about</IndexLink></li>
+          <li><Link to="/Work" activeClassName="active">latest work</Link></li>      
         </ul>
         <ReactCSSTransitionGroup
           component="div"

@@ -10,7 +10,7 @@ import extrenalLink from './external-link.svg';
 
 export default class Work1 extends Component {
   componentDidMount() {
-    const scrollDuration = 600;
+    const scrollDuration = 300;
     const scrollHeight = window.scrollY,
           scrollStep = Math.PI / ( scrollDuration / 15 ),
           cosParameter = scrollHeight / 2;

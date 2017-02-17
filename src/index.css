@@ -72,7 +72,7 @@ a:active, a:hover {
 .navigation {
   position: fixed;
   display: block;
-  z-index: 5;
+  z-index: 6;
   top: 45px;
   left:0;
   right:0;
@@ -133,12 +133,14 @@ a:active, a:hover {
   color: #FFFFFF;
   text-decoration:underline;
 }
-.App-default .App-content .small a:link,
+.App-default .App-content .small a,
 .App-default .App-content .small a:visited {
   color: #6E7C8E;
-  text-decoration:none;
   -webkit-transition: color .2s ease-in;
   transition: color .2s ease-in;
+}
+.App-default .App-content .small a.external-link {
+  text-decoration:none;
 }
 .App-default .App-content .small a:hover {
   color: #8e9fb5;
@@ -163,8 +165,8 @@ a:active, a:hover {
   width: 40px;
   height: 40px;
   text-indent: -9999px;
-  -webkit-transition: background-color .3s ease-in;
-  transition: background-color .2s ease-in;
+  -webkit-transition: all .3s ease-in;
+  transition: all .2s ease-in;
 }
 .App-default .social-nav a:hover {
   background-color: #525d6d;
@@ -247,7 +249,7 @@ a:active, a:hover {
     padding:240px 0 0;
   }
   .App-default .App-header .App-content.vertical-center {
-    padding:0 0 0;
+    padding:0 0 75px;
   }
 }
 
@@ -314,3 +316,35 @@ p.fixed {
 .img-bordered {
   border: solid 1px #FFFFFF;
 }
+
+/*.transition-screen {
+  position: fixed;
+  z-index: 5;
+  height: 200vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+  transform: translate3d(0, 0, 0);
+  transition: all .5s ease-in;
+  transition-delay: .5s;
+}
+.transition-screen-1 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #3B4451;
+}
+.transition-screen-2 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+}
+.transition-screen.active {
+  transform: translate3d(0, -200%, 0);
+}*/

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import $ from 'jquery';
 
 import './style.css';
+import downarrow from './down-arrow.svg';
 import email from './email.svg';
 import audiodescription from './audio-description.svg';
 import bitbucket from './bitbucket.svg';
@@ -20,6 +21,7 @@ export default class About extends Component {
     this.state = {
     };
     this.handleClick = this.handleClick.bind(this);
+    this.scrollDown = this.scrollDown.bind(this);
   }
 
   componentDidMount() {
@@ -55,24 +57,27 @@ export default class About extends Component {
     hiddenObjects.reverse();
 
     hideVisible();
-    setTimeout(showHidden, 600);
+    setTimeout(showHidden, 300);
     //__OBJECTS.reverse();
 
     function hideVisible() {
       let letter = ActiveObjects.pop();
       letter.removeClass('active');
       if (ActiveObjects.length) {
-        setTimeout(hideVisible, 60);
+        setTimeout(hideVisible, 30);
       }
     }
     function showHidden() {
       let letter = hiddenObjects.pop();
       letter.addClass('active');
       if (hiddenObjects.length) {
-        setTimeout(showHidden, 60);
+        setTimeout(showHidden, 30);
       }
     }
+  }
 
+  scrollDown() {
+     $("html, body").animate({ scrollTop: $(document).height() }, 450);
   }
 
   render() {
@@ -100,6 +105,10 @@ export default class About extends Component {
 
                 </a>. I&rsquo;m a creative developer based in Washington DC. I work at <a target="_blank" href="http://www.api.org/">the API</a>.
             </p>
+            <svg onClick={this.scrollDown} className="down-arrow" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60">
+              <circle id="circle" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" cx="30" cy="30" r="28.209"/>
+              <path id="down-arrow" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M30,42.976V19.162 M21.179,31.51L30,42.976l8.821-11.466"/>
+            </svg>
           </div>
         </div>
         <div className="App-footer vertical-center">

@@ -10,7 +10,7 @@ import extrenalLink from './external-link.svg';
 
 export default class Work1 extends Component {
   componentDidMount() {
-    const scrollDuration = 600;
+    const scrollDuration = 300;
     const scrollHeight = window.scrollY,
           scrollStep = Math.PI / ( scrollDuration / 15 ),
           cosParameter = scrollHeight / 2;
@@ -75,8 +75,8 @@ export default class Work1 extends Component {
                 <p>
                   <a target="_blank" href="http://www.energytogether.org">Live site</a>
                 </p>
-                <p>
-                  <a target="_blank" href="http://cdn.api.org/test/sharing-is-caring/">Advanced shareable creator</a>
+                <p className="small">
+                  +Related project: <a target="_blank" href="http://cdn.api.org/test/sharing-is-caring/">Twitter image creator</a>
                 </p>
               </div>
             </div>
