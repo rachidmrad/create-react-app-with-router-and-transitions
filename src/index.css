@@ -267,9 +267,14 @@ a:active, a:hover {
 .external-link img {
   width:.8em;
   position:absolute;
-  top:.3em;
+  top:.1em;
   margin:0;
   right:0;
+}
+@media screen and (min-width: 480px) {
+  .external-link img {
+    top:.3em;
+  }
 }
 p.small {
   font-size: 0.8em;
