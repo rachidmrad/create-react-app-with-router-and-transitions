@@ -41,8 +41,10 @@ import './style.css';
 
     if (document.body.className = this[hidden]) {
       $("link[rel*='shortcut icon']").attr("href", "favicon2.ico");
+      document.title = 'Arrgh';
     } else {
       $("link[rel*='shortcut icon']").attr("href", "favicon.ico");
+      document.title = 'Rachid Mrad';
     }
   }
 })();
