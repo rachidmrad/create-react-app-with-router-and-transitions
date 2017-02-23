@@ -44,7 +44,7 @@ import './style.css';
       document.title = 'Arrgh';
     } else {
       $("link[rel*='shortcut icon']").attr("href", "favicon.ico");
-      document.title = 'Rachid Mrad';
+      document.title = 'Rachid';
     }
   }
 })();
