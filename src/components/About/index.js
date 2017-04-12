@@ -128,6 +128,9 @@ export default class About extends Component {
             <p className="small">
               <a href="mailto:rachid.mrad@gmail.com">rachid.mrad@gmail.com</a>
             </p>
+            <p className="small">
+              <a href="rmrad_Resume.pdf">Resume (PDF)</a>
+            </p>
           </div>
         </div>
       </div>
